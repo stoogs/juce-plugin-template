@@ -30,7 +30,10 @@
 3. Build defaults are set to general audio effect (IS_SYNTH=FALSE, IS_MIDI_EFFECT=FALSE)
 4. Developer can run `cmake && ninja` from fresh clone and produce compiled binaries for all targets
 
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 01-01-PLAN.md — Initialize submodules, write CMakeLists.txt, verify all targets compile
 
 ---
 
@@ -74,7 +77,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Build System Foundation | 0/? | Not started | — |
+| 1. Build System Foundation | 0/1 | Planned | — |
 | 2. Plugin Core & WebView | 0/? | Not started | — |
 | 3. Dev Workflow & Documentation | 0/? | Not started | — |
 
