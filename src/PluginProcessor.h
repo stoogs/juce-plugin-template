@@ -28,6 +28,18 @@ public:
     void getStateInformation(juce::MemoryBlock& destData) override;
     void setStateInformation(const void* data, int sizeInBytes) override;
 
+    static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
+    juce::AudioProcessorValueTreeState& getAPVTS() { return apvts; }
+
 private:
+    // --- Parameters ---
+    // Add your parameters here. Each parameter needs:
+    //   1. An ID string (used in getAPVTS().getRawParameterValue("id"))
+    //   2. A name string (shown in DAW automation lanes)
+    //   3. A range (NormalisableRange) and default value
+    // See createParameterLayout() in PluginProcessor.cpp for the example pattern.
+    // ---
+    juce::AudioProcessorValueTreeState apvts;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PluginProcessor)
 };
