@@ -28,7 +28,7 @@
 **Session Status:** Roadmap created, awaiting user approval
 
 **Progress:**
-[█████░░░░░] 50%
+[████████░░] 75%
 Phase 1: 0% ■□□□□□□□□□
 Phase 2: 0% ■□□□□□□□□□
 Phase 3: 0% ■□□□□□□□□□
@@ -72,6 +72,8 @@ Phase 3: 0% ■□□□□□□□□□
 - [Phase 01-build-system-foundation]: IS_SYNTH=FALSE, IS_MIDI_EFFECT=FALSE as general audio effect defaults
 - [Phase 02-plugin-core-webview]: No external dependencies (no CDN, no npm) for blank-canvas HTML scaffold
 - [Phase 02-plugin-core-webview]: Three-field JSON message format { type, name, value } for all JS<->C++ bridge communication
+- [Phase 02-plugin-core-webview]: APVTS declared last in private section to ensure initialization after *this is fully constructed
+- [Phase 02-plugin-core-webview]: State serialized as XML via copyXmlToBinary for human-readable cross-version DAW compatibility
 
 ## Coverage Summary
 

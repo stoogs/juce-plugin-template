@@ -14,8 +14,8 @@
 
 ### Source Files
 
-- [ ] **SRC-01**: PluginProcessor.h/cpp with AudioProcessorValueTreeState parameter management
-- [ ] **SRC-02**: State save/restore (getStateInformation/setStateInformation) implemented
+- [x] **SRC-01**: PluginProcessor.h/cpp with AudioProcessorValueTreeState parameter management
+- [x] **SRC-02**: State save/restore (getStateInformation/setStateInformation) implemented
 - [ ] **SRC-03**: PluginEditor.h/cpp with WebBrowserComponent wired up
 - [ ] **SRC-04**: HTML loaded via binary resource strategy (juce_add_binary_data)
 
@@ -58,8 +58,8 @@
 | BUILD-02 | Phase 1 | Complete |
 | BUILD-03 | Phase 1 | Complete |
 | BUILD-04 | Phase 1 | Complete |
-| SRC-01 | Phase 2 | Pending |
-| SRC-02 | Phase 2 | Pending |
+| SRC-01 | Phase 2 | Complete |
+| SRC-02 | Phase 2 | Complete |
 | SRC-03 | Phase 2 | Pending |
 | SRC-04 | Phase 2 | Pending |
 | WEB-01 | Phase 2 | Complete |
