@@ -1,5 +1,5 @@
 # ninja log v7
-1	27	1771662468024405672	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/CMakeFiles/cmake.verify_globs	ccd6b202f3503ce6
+1	27	1771673285176848810	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/CMakeFiles/cmake.verify_globs	ccd6b202f3503ce6
 27	36	1771660031254454616	extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_core/juce_core_CompilationTime.cpp.o	7fc3adf87e47c3b8
 27	193	1771660031254067558	extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Sheenbidi.c.o	64cb5fd1c4b8266
 27	1622	1771660031254606419	extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_data_structures/juce_data_structures.cpp.o	be9fdc9349dab48
@@ -11,4 +11,4 @@
 27	11342	1771660031253937606	extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o	610739eae29c15f
 26	18950	1771660031253661440	extras/Build/juceaide/CMakeFiles/juceaide.dir/__/__/__/modules/juce_gui_basics/juce_gui_basics.cpp.o	6132116b2ba049e7
 18950	19855	1771660050176773171	extras/Build/juceaide/juceaide_artefacts/Custom/juceaide	ebe22e04a32e322a
-1	27	1771662925430978226	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/CMakeFiles/cmake.verify_globs	ccd6b202f3503ce6
+1	26	1771673948362232918	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/CMakeFiles/cmake.verify_globs	ccd6b202f3503ce6

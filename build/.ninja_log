@@ -1,5 +1,5 @@
 # ninja log v7
-3	29	1771662849559523191	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/CMakeFiles/cmake.verify_globs	f0fce151aacf94b9
+2	29	1771673947989234190	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/CMakeFiles/cmake.verify_globs	f0fce151aacf94b9
 94	109	1771662472425013929	CMakeFiles/PluginTemplate.dir/libs/JUCE/modules/juce_core/juce_core_CompilationTime.cpp.o	582759ba6e3fdc23
 94	111	1771662472425534333	CMakeFiles/PluginTemplate.dir/libs/JUCE/modules/juce_audio_processors_headless/juce_audio_processors_headless_ara.cpp.o	a7ef26dae8366dfc
 109	128	1771662472439436205	CMakeFiles/PluginTemplate.dir/libs/JUCE/modules/juce_audio_processors_headless/juce_audio_processors_headless_lv2_libs.cpp.o	3e8694d21b8eff76
@@ -40,8 +40,8 @@
 93	11924	1771662472424254093	CMakeFiles/PluginTemplate.dir/libs/JUCE/modules/juce_graphics/juce_graphics.cpp.o	790f37dc8a6ae331
 93	12781	1771662472424420355	CMakeFiles/PluginTemplate.dir/libs/JUCE/modules/juce_graphics/juce_graphics_Harfbuzz.cpp.o	65b342e375ff21e9
 93	18265	1771662472424127742	CMakeFiles/PluginTemplate.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.cpp.o	88d1e0c8cf99262e
-2501	2808	1771662852057546099	PluginTemplate_artefacts/Release/libPluginTemplate_SharedCode.a	acea48e763e86cf1
-3160	61482	1771662633642652104	PluginTemplate_artefacts/Release/CLAP/PluginTemplate.clap	56d21949447e6c39
+43	390	1771673285291348390	PluginTemplate_artefacts/Release/libPluginTemplate_SharedCode.a	121d01c0e7ae7bd5
+390	59254	1771673285637846615	PluginTemplate_artefacts/Release/CLAP/PluginTemplate.clap	56d21949447e6c39
 2808	64087	1771662852364548916	PluginTemplate_artefacts/Release/VST3/PluginTemplate.vst3/Contents/x86_64-linux/PluginTemplate.so	d936866b8d65b03f
 2808	72289	1771662558637384313	PluginTemplate_artefacts/Release/Standalone/PluginTemplate	a4de5d3062b8163a
 28	44	1771662142954720987	clean	7adf74806070bde8
@@ -58,3 +58,28 @@
 83	92	1771662472417436053	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/PluginTemplate_artefacts/JuceLibraryCode/Release/juce_LinuxSubprocessHelperBinaryData.h	816068ac2cea3160
 83	92	1771662472417436053	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/PluginTemplate_artefacts/JuceLibraryCode/Release/juce_LinuxSubprocessHelperBinaryData.cpp	816068ac2cea3160
 92	123	1771662472423774690	CMakeFiles/PluginTemplate.dir/PluginTemplate_artefacts/JuceLibraryCode/Release/juce_LinuxSubprocessHelperBinaryData.cpp.o	f3656f2f386fb8bc
+30	457	1771673948421232717	build.ninja	57dd59fe284bc5ef
+30	457	1771673948418232727	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/cmake_install.cmake	57dd59fe284bc5ef
+30	457	1771673948418232727	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/cmake_install.cmake	57dd59fe284bc5ef
+30	457	1771673948419232724	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/modules/cmake_install.cmake	57dd59fe284bc5ef
+30	457	1771673948419232724	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/extras/Build/cmake_install.cmake	57dd59fe284bc5ef
+30	457	1771673948419232724	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/extras/Build/juceaide/cmake_install.cmake	57dd59fe284bc5ef
+30	457	1771673948420232720	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/cmake_install.cmake	57dd59fe284bc5ef
+30	457	1771673948421095910	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/clapjuceext_clap/cmake_install.cmake	57dd59fe284bc5ef
+30	457	1771673948421171250	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/clapjuceext_claphelpers/cmake_install.cmake	57dd59fe284bc5ef
+30	457	1771673948421171250	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/clapjuceext_clap/CTestTestfile.cmake	57dd59fe284bc5ef
+33	42	1771673285280848315	CMakeFiles/PluginTemplate.dir/src/glibc_compat.cpp.o	b4c8a03a0dfddc23
+29	440	1771673948421232717	build.ninja	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/cmake_install.cmake	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/cmake_install.cmake	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/modules/cmake_install.cmake	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/extras/Build/cmake_install.cmake	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/extras/Build/juceaide/cmake_install.cmake	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/cmake_install.cmake	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/clapjuceext_clap/cmake_install.cmake	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/clapjuceext_claphelpers/cmake_install.cmake	57dd59fe284bc5ef
+29	440	1771673948421232717	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/clapjuceext_clap/CTestTestfile.cmake	57dd59fe284bc5ef
+2	28	1771673948429232689	/home/stoo/code/GSD/Plugins/juce-plugin-template/build/CMakeFiles/cmake.verify_globs	f0fce151aacf94b9
+32	136	1771673948459232587	CMakeFiles/PluginTemplate.dir/src/glibc_compat.cpp.o	c7bd03fd236bdf59
+136	443	1771673948563672628	PluginTemplate_artefacts/Release/libPluginTemplate_SharedCode.a	121d01c0e7ae7bd5
+443	59031	1771673948870231185	PluginTemplate_artefacts/Release/CLAP/PluginTemplate.clap	56d21949447e6c39

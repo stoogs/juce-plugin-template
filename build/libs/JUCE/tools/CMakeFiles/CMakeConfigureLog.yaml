@@ -3787,3 +3787,61 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "extras/Build/CMake/JUCECheckAtomic.cmake:73 (try_compile)"
+      - "extras/Build/CMake/JUCECheckAtomic.cmake:128 (_juce_create_atomic_target)"
+      - "extras/Build/CMake/JUCEModuleSupport.cmake:57 (include)"
+      - "CMakeLists.txt:50 (include)"
+    directories:
+      source: "/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/check_atomic_dir_XuDZs76mcBmrCsU1/CMakeFiles/CMakeTmp"
+      binary: "/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/check_atomic_dir_XuDZs76mcBmrCsU1/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "compile_result"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/check_atomic_dir_XuDZs76mcBmrCsU1/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_e391f
+        [1/2] /usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_e391f.dir/check_atomic_u5tG6HJCa81PLbLz.cpp.o -c /home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/check_atomic_u5tG6HJCa81PLbLz.cpp
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_e391f.dir/check_atomic_u5tG6HJCa81PLbLz.cpp.o -o cmTC_e391f   && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "extras/Build/CMake/JUCECheckAtomic.cmake:73 (try_compile)"
+      - "extras/Build/CMake/JUCECheckAtomic.cmake:128 (_juce_create_atomic_target)"
+      - "extras/Build/CMake/JUCEModuleSupport.cmake:57 (include)"
+      - "CMakeLists.txt:50 (include)"
+    directories:
+      source: "/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/check_atomic_dir_HWFdWG5bsIKznWhv/CMakeFiles/CMakeTmp"
+      binary: "/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/check_atomic_dir_HWFdWG5bsIKznWhv/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "compile_result"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/check_atomic_dir_HWFdWG5bsIKznWhv/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_4fdcf
+        [1/2] /usr/bin/c++   -std=c++17 -o CMakeFiles/cmTC_4fdcf.dir/check_atomic_8YGDCO3X6o6sbylq.cpp.o -c /home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/tools/check_atomic_8YGDCO3X6o6sbylq.cpp
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_4fdcf.dir/check_atomic_8YGDCO3X6o6sbylq.cpp.o -o cmTC_4fdcf   && :
+        
+      exitCode: 0
+...

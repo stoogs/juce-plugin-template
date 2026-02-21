@@ -30,7 +30,14 @@ target_sources(PluginTemplate PRIVATE
     src/PluginProcessor.h
     src/PluginEditor.cpp
     src/PluginEditor.h
+    src/glibc_compat.cpp
 )
+
+# glibc_compat.cpp must NOT be compiled with LTO so the .symver directives
+# are preserved in the object file and not discarded by the LTO pass.
+if(UNIX AND NOT APPLE)
+    set_source_files_properties(src/glibc_compat.cpp PROPERTIES COMPILE_FLAGS "-fno-lto")
+endif()
 
 target_compile_definitions(PluginTemplate
     PUBLIC
