@@ -1,0 +1,14 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/stoo/code/GSD/Plugins/juce-plugin-template/build/cmake_install.cmake",
+		"/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/cmake_install.cmake",
+		"/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/modules/cmake_install.cmake",
+		"/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/extras/Build/cmake_install.cmake",
+		"/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/JUCE/extras/Build/juceaide/cmake_install.cmake",
+		"/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/cmake_install.cmake",
+		"/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/clapjuceext_clap/cmake_install.cmake",
+		"/home/stoo/code/GSD/Plugins/juce-plugin-template/build/libs/clap-juce-extensions/clapjuceext_claphelpers/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
