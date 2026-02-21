@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin UI</title>
+    <style>
+        /* Minimal reset — replace with your own styles */
+        body { margin: 0; padding: 16px; font-family: sans-serif; background: #1a1a1a; color: #eee; }
+        button { padding: 8px 16px; cursor: pointer; }
+        #log { margin-top: 12px; font-size: 12px; color: #aaa; }
+    </style>
+</head>
+<body>
+
+<h2>Plugin Template</h2>
+
+<!-- Test button: triggers a C++ callback to verify bidirectional comms are wired -->
+<button id="pingBtn">Send test message to C++</button>
+<div id="log">Messages from C++ will appear here.</div>
+
+<script>
+// =============================================================================
+// JS <-> C++ Bridge
+// =============================================================================
+//
+// SENDING to C++ (JS -> C++):
+//   Call sendToPlugin(type, name, value) from anywhere in this page.
+//   The C++ PluginEditor receives it in pluginBrowser.resourceRequested()
+//   (JUCE 8 WebBrowserComponent resource-based API) or via postMessage.
+//
+//   Message format — JSON object with three fields:
+//   {
+//     "type":  string  — message category, e.g. "paramChange", "ping"
+//     "name":  string  — parameter ID or action name, e.g. "gain"
+//     "value": number|string — the value, e.g. 0.75
+//   }
+//
+//   Example: sendToPlugin("paramChange", "gain", 0.75)
+//
+// RECEIVING from C++ (C++ -> JS):
+//   C++ calls emitEventIfBrowserIsVisible("pluginMessage", jsonString) on the
+//   WebBrowserComponent. JUCE routes this to window.pluginMessageReceived(jsonString).
+//   Parse the string as JSON to get { type, name, value }.
+//
+// =============================================================================
+
+/**
+ * Send a message to the C++ plugin host.
+ * @param {string} type  - Message category (e.g. "paramChange", "ping")
+ * @param {string} name  - Parameter ID or action (e.g. "gain")
+ * @param {*}      value - Value to send (number, string, or boolean)
+ */
+function sendToPlugin(type, name, value) {
+    const msg = JSON.stringify({ type: type, name: name, value: value });
+    if (window.__JUCE__ && window.__JUCE__.postMessage) {
+        // JUCE 8 WebBrowserComponent native bridge
+        window.__JUCE__.postMessage(msg);
+    } else {
+        // Fallback for browser-based development (no C++ host)
+        console.log('[sendToPlugin]', msg);
+    }
+}
+
+/**
+ * Called by C++ when the host wants to send data to the UI.
+ * C++ uses: emitEventIfBrowserIsVisible("pluginMessage", jsonString)
+ * JUCE routes this call automatically to window.pluginMessageReceived.
+ *
+ * @param {string} jsonString - JSON-encoded { type, name, value }
+ */
+window.pluginMessageReceived = function (jsonString) {
+    try {
+        const msg = JSON.parse(jsonString);
+        const log = document.getElementById('log');
+        log.textContent = 'From C++: type=' + msg.type + ' name=' + msg.name + ' value=' + msg.value;
+        console.log('[pluginMessageReceived]', msg);
+    } catch (e) {
+        console.error('[pluginMessageReceived] parse error:', e, jsonString);
+    }
+};
+
+// Test button: sends a "ping" message to C++ to verify the bridge is working.
+document.getElementById('pingBtn').addEventListener('click', function () {
+    sendToPlugin('ping', 'test', 1);
+});
+
+</script>
+</body>
+</html>
