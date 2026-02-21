@@ -8,7 +8,7 @@
 
 ## Phases
 
-- [ ] **Phase 1: Build System Foundation** - CMake, submodules, and compiling targets ready
+- [x] **Phase 1: Build System Foundation** - CMake, submodules, and compiling targets ready (completed 2026-02-21)
 - [ ] **Phase 2: Plugin Core & WebView** - Processor, editor, state management, and JS↔C++ bridge
 - [ ] **Phase 3: Dev Workflow & Documentation** - Install scripts, .gitignore, and quickstart guide
 
@@ -30,7 +30,7 @@
 3. Build defaults are set to general audio effect (IS_SYNTH=FALSE, IS_MIDI_EFFECT=FALSE)
 4. Developer can run `cmake && ninja` from fresh clone and produce compiled binaries for all targets
 
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 01-01-PLAN.md — Initialize submodules, write CMakeLists.txt, verify all targets compile
@@ -77,7 +77,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Build System Foundation | 0/1 | Planned | — |
+| 1. Build System Foundation | 1/1 | Complete   | 2026-02-21 |
 | 2. Plugin Core & WebView | 0/? | Not started | — |
 | 3. Dev Workflow & Documentation | 0/? | Not started | — |
 

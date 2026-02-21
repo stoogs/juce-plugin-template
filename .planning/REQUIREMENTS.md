@@ -7,10 +7,10 @@
 
 ### Build System
 
-- [ ] **BUILD-01**: CMakeLists.txt compiles CLAP, VST3, and Standalone targets out of the box
-- [ ] **BUILD-02**: JUCE added as git submodule at libs/JUCE
-- [ ] **BUILD-03**: clap-juce-extensions added as git submodule at libs/clap-juce-extensions
-- [ ] **BUILD-04**: General audio effect defaults (IS_SYNTH=FALSE, IS_MIDI_EFFECT=FALSE)
+- [x] **BUILD-01**: CMakeLists.txt compiles CLAP, VST3, and Standalone targets out of the box
+- [x] **BUILD-02**: JUCE added as git submodule at libs/JUCE
+- [x] **BUILD-03**: clap-juce-extensions added as git submodule at libs/clap-juce-extensions
+- [x] **BUILD-04**: General audio effect defaults (IS_SYNTH=FALSE, IS_MIDI_EFFECT=FALSE)
 
 ### Source Files
 
@@ -54,10 +54,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BUILD-01 | Phase 1 | Pending |
-| BUILD-02 | Phase 1 | Pending |
-| BUILD-03 | Phase 1 | Pending |
-| BUILD-04 | Phase 1 | Pending |
+| BUILD-01 | Phase 1 | Complete |
+| BUILD-02 | Phase 1 | Complete |
+| BUILD-03 | Phase 1 | Complete |
+| BUILD-04 | Phase 1 | Complete |
 | SRC-01 | Phase 2 | Pending |
 | SRC-02 | Phase 2 | Pending |
 | SRC-03 | Phase 2 | Pending |

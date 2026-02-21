@@ -28,7 +28,7 @@
 **Session Status:** Roadmap created, awaiting user approval
 
 **Progress:**
-```
+[██████████] 100%
 Phase 1: 0% ■□□□□□□□□□
 Phase 2: 0% ■□□□□□□□□□
 Phase 3: 0% ■□□□□□□□□□
@@ -67,6 +67,9 @@ Phase 3: 0% ■□□□□□□□□□
 | Linux primary, macOS/Windows scripts deferred | Primary dev env is CachyOS; v2 scope | Confirmed in PROJECT.md |
 
 ---
+- [Phase 01-build-system-foundation]: Used JUCE 8.0.12 stable tag for JUCE submodule
+- [Phase 01-build-system-foundation]: Used clap-juce-extensions main branch (not 0.26.0 tag) for JUCE 8 compatibility
+- [Phase 01-build-system-foundation]: IS_SYNTH=FALSE, IS_MIDI_EFFECT=FALSE as general audio effect defaults
 
 ## Coverage Summary
 
