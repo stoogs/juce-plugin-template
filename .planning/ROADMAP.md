@@ -52,7 +52,12 @@ Plans:
 4. web/index.html loads successfully and displays a minimal scaffold with inline comments explaining the JS↔C++ bridge message format (type/name/value JSON)
 5. Developer can call a test function from web interface that triggers C++ callback (verify bidirectional communication is wired)
 
-**Plans:** TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — AudioProcessorValueTreeState with gain parameter and state save/restore
+- [ ] 02-02-PLAN.md — web/index.html minimal scaffold with JS↔C++ bridge documentation
+- [ ] 02-03-PLAN.md — PluginEditor WebBrowserComponent wiring and CMakeLists.txt updates
 
 ---
 
@@ -78,7 +83,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Build System Foundation | 1/1 | Complete   | 2026-02-21 |
-| 2. Plugin Core & WebView | 0/? | Not started | — |
+| 2. Plugin Core & WebView | 0/3 | Planning | — |
 | 3. Dev Workflow & Documentation | 0/? | Not started | — |
 
 ---
