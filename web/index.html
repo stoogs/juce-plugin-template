@@ -21,13 +21,13 @@
 
 <script>
 // =============================================================================
-// JS <-> C++ Bridge
+// JS <-> C++ Bridge (JUCE 8 WebBrowserComponent native integration)
 // =============================================================================
 //
 // SENDING to C++ (JS -> C++):
 //   Call sendToPlugin(type, name, value) from anywhere in this page.
-//   The C++ PluginEditor receives it in pluginBrowser.resourceRequested()
-//   (JUCE 8 WebBrowserComponent resource-based API) or via postMessage.
+//   Uses window.__JUCE__.backend.emitEvent("pluginMessage", { type, name, value })
+//   which routes to the withEventListener("pluginMessage", ...) callback in C++.
 //
 //   Message format — JSON object with three fields:
 //   {
@@ -39,9 +39,9 @@
 //   Example: sendToPlugin("paramChange", "gain", 0.75)
 //
 // RECEIVING from C++ (C++ -> JS):
-//   C++ calls emitEventIfBrowserIsVisible("pluginMessage", jsonString) on the
-//   WebBrowserComponent. JUCE routes this to window.pluginMessageReceived(jsonString).
-//   Parse the string as JSON to get { type, name, value }.
+//   C++ calls emitEventIfBrowserIsVisible("pluginMessage", var) on the
+//   WebBrowserComponent. Register a listener with:
+//   window.__JUCE__.backend.addEventListener("pluginMessage", handler)
 //
 // =============================================================================
 
@@ -52,33 +52,40 @@
  * @param {*}      value - Value to send (number, string, or boolean)
  */
 function sendToPlugin(type, name, value) {
-    const msg = JSON.stringify({ type: type, name: name, value: value });
-    if (window.__JUCE__ && window.__JUCE__.postMessage) {
+    if (window.__JUCE__ && window.__JUCE__.backend) {
         // JUCE 8 WebBrowserComponent native bridge
-        window.__JUCE__.postMessage(msg);
+        // emitEvent sends { eventId, payload } via window.__JUCE__.postMessage
+        // C++ withEventListener("pluginMessage", ...) receives the payload object
+        window.__JUCE__.backend.emitEvent("pluginMessage", { type: type, name: name, value: value });
     } else {
         // Fallback for browser-based development (no C++ host)
-        console.log('[sendToPlugin]', msg);
+        console.log('[sendToPlugin]', JSON.stringify({ type: type, name: name, value: value }));
     }
 }
 
-/**
- * Called by C++ when the host wants to send data to the UI.
- * C++ uses: emitEventIfBrowserIsVisible("pluginMessage", jsonString)
- * JUCE routes this call automatically to window.pluginMessageReceived.
- *
- * @param {string} jsonString - JSON-encoded { type, name, value }
- */
-window.pluginMessageReceived = function (jsonString) {
-    try {
-        const msg = JSON.parse(jsonString);
-        const log = document.getElementById('log');
-        log.textContent = 'From C++: type=' + msg.type + ' name=' + msg.name + ' value=' + msg.value;
-        console.log('[pluginMessageReceived]', msg);
-    } catch (e) {
-        console.error('[pluginMessageReceived] parse error:', e, jsonString);
+// Listen for messages sent from C++ via emitEventIfBrowserIsVisible("pluginMessage", ...)
+// C++ sends a var object; JUCE serialises it and delivers it here as a JS object.
+function setupBridgeListeners() {
+    if (window.__JUCE__ && window.__JUCE__.backend) {
+        window.__JUCE__.backend.addEventListener("pluginMessage", function (msg) {
+            try {
+                const log = document.getElementById('log');
+                log.textContent = 'From C++: type=' + msg.type + ' name=' + msg.name + ' value=' + msg.value;
+                console.log('[pluginMessageReceived]', msg);
+            } catch (e) {
+                console.error('[pluginMessageReceived] error:', e, msg);
+            }
+        });
     }
-};
+}
+
+// Set up listeners once the JUCE backend is available.
+// The backend is injected before any page scripts run when native integration is enabled.
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupBridgeListeners);
+} else {
+    setupBridgeListeners();
+}
 
 // Test button: sends a "ping" message to C++ to verify the bridge is working.
 document.getElementById('pingBtn').addEventListener('click', function () {
