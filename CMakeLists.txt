@@ -4,11 +4,16 @@ project(PluginTemplate VERSION 1.0.0)
 add_subdirectory(libs/JUCE)
 add_subdirectory(libs/clap-juce-extensions)
 
+juce_add_binary_data(PluginTemplateData
+    SOURCES
+        web/index.html
+)
+
 juce_add_plugin(PluginTemplate
     COMPANY_NAME "YourCompany"
     PLUGIN_MANUFACTURER_CODE Mfrc
     PLUGIN_CODE Plug
-    FORMATS VST3 Standalone
+    FORMATS CLAP VST3 Standalone
     IS_SYNTH FALSE
     IS_MIDI_EFFECT FALSE
     NEEDS_MIDI_INPUT FALSE
@@ -28,13 +33,14 @@ target_sources(PluginTemplate PRIVATE
 
 target_compile_definitions(PluginTemplate
     PUBLIC
-    JUCE_WEB_BROWSER=0
+    JUCE_WEB_BROWSER=1
     JUCE_USE_CURL=0
     JUCE_VST3_CAN_REPLACE_VST2=0
 )
 
 target_link_libraries(PluginTemplate
     PRIVATE
+    PluginTemplateData
     juce::juce_audio_utils
     juce::juce_audio_processors
     juce::juce_core
