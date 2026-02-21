@@ -21,8 +21,8 @@
 
 ### WebView UI
 
-- [ ] **WEB-01**: web/index.html minimal scaffold with JS↔C++ bridge handlers in place
-- [ ] **WEB-02**: Message format standard (JSON type/name/value) documented in HTML comments
+- [x] **WEB-01**: web/index.html minimal scaffold with JS↔C++ bridge handlers in place
+- [x] **WEB-02**: Message format standard (JSON type/name/value) documented in HTML comments
 
 ### Dev Workflow
 
@@ -62,8 +62,8 @@
 | SRC-02 | Phase 2 | Pending |
 | SRC-03 | Phase 2 | Pending |
 | SRC-04 | Phase 2 | Pending |
-| WEB-01 | Phase 2 | Pending |
-| WEB-02 | Phase 2 | Pending |
+| WEB-01 | Phase 2 | Complete |
+| WEB-02 | Phase 2 | Complete |
 | DEV-01 | Phase 3 | Pending |
 | DEV-02 | Phase 3 | Pending |
 | DEV-03 | Phase 3 | Pending |

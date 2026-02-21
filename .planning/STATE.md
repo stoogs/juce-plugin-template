@@ -28,7 +28,7 @@
 **Session Status:** Roadmap created, awaiting user approval
 
 **Progress:**
-[██████████] 100%
+[█████░░░░░] 50%
 Phase 1: 0% ■□□□□□□□□□
 Phase 2: 0% ■□□□□□□□□□
 Phase 3: 0% ■□□□□□□□□□
@@ -70,6 +70,8 @@ Phase 3: 0% ■□□□□□□□□□
 - [Phase 01-build-system-foundation]: Used JUCE 8.0.12 stable tag for JUCE submodule
 - [Phase 01-build-system-foundation]: Used clap-juce-extensions main branch (not 0.26.0 tag) for JUCE 8 compatibility
 - [Phase 01-build-system-foundation]: IS_SYNTH=FALSE, IS_MIDI_EFFECT=FALSE as general audio effect defaults
+- [Phase 02-plugin-core-webview]: No external dependencies (no CDN, no npm) for blank-canvas HTML scaffold
+- [Phase 02-plugin-core-webview]: Three-field JSON message format { type, name, value } for all JS<->C++ bridge communication
 
 ## Coverage Summary
 
