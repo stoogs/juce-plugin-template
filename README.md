@@ -22,7 +22,8 @@ git init
 
 ### 3. Re-register submodules
 
-> Required because wiping `.git` also destroys `.gitmodules`.
+> The submodule folders exist on disk but aren't valid git repos after wiping `.git`.
+> Remove them first, then re-add — git won't re-download everything, it uses local cache.
 
 ```bash
 rm -rf libs/JUCE libs/clap-juce-extensions
@@ -64,10 +65,53 @@ Built artefacts will appear in `build/MyNewPlugin_artefacts/Debug/`.
 
 ---
 
+## .gitignore
+
+Make sure your `.gitignore` includes the following — especially `build/`, which contains
+large compiled binaries that will break GitHub pushes:
+
+```gitignore
+# Build
+build/
+cmake-build-*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# JUCE
+JuceLibraryCode/
+*.jucer.bak
+
+# Compiled outputs
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+```
+
+---
+
 ## Troubleshooting
 
+**`already exists and is not a valid git repo`**
+→ Submodule folders exist on disk but aren't registered. Remove and re-add:
+```bash
+rm -rf libs/JUCE libs/clap-juce-extensions
+git submodule add https://github.com/juce-framework/JUCE.git libs/JUCE
+git submodule add https://github.com/free-audio/clap-juce-extensions.git libs/clap-juce-extensions
+git submodule update --init --recursive
+```
+
 **`add_subdirectory given source "libs/clap-juce-extensions" which is not an existing directory`**
-→ Submodule is missing. Run:
+→ Submodule is missing entirely. Run:
 ```bash
 git submodule add https://github.com/free-audio/clap-juce-extensions.git libs/clap-juce-extensions
 git submodule update --init --recursive
@@ -76,5 +120,17 @@ git submodule update --init --recursive
 **`CMakeCache.txt` path mismatch error**
 → Stale build cache from the template. Run `rm -rf build` then re-run cmake.
 
-**`libs/JUCE` is empty after cloning**
-→ You cloned without `--recursive`. Run `git submodule update --init --recursive`.
+**Push rejected with large file errors**
+→ `build/` was committed. Make sure `build/` is in `.gitignore`, then wipe and restart git history:
+```bash
+rm -rf .git
+git init
+rm -rf libs/JUCE libs/clap-juce-extensions
+git submodule add https://github.com/juce-framework/JUCE.git libs/JUCE
+git submodule add https://github.com/free-audio/clap-juce-extensions.git libs/clap-juce-extensions
+git submodule update --init --recursive
+git add .
+git commit -m "init: clean start"
+git remote add origin https://github.com/stoogs/MyNewPlugin.git
+git push origin master --force
+```
